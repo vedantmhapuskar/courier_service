@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Add address</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href={% static 'address.css' %}>
+    </head>
+    <body>
+        <section class="header">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-left">
+                     
+                  <form method="post" action="add">
+                    {% csrf_token %}
+                      <h3>Fill the Package Details</h3>
+                        <label for="fname"><i class=""></i> Weight in kg</label>
+                        
+                        {{form.weight}}
+
+                        <label for="email"> Category</label>
+                      
+                      {{form.slct1}}
+
+                      <div class="f-group">
+                        <label for=""> type</label>
+                        
+                        {{form.slct2}}
+                        <h4>Pick up Address</h4>
+                         <div class="input-row">
+                             <div class="input-group">
+                                 <label>City</label>
+                                 
+                                 {{form.city1}}
+                             </div>
+                             <div class="input-group">
+                                <label>Pincode</label>
+                                
+                                {{form.pincode1}}
+                            </div>
+                        </div>
+                            <div class="input-row">
+                            <div class="input-group">
+                                <label>State</label>
+                                
+                                {{form.state1}}
+                            </div>
+
+                          </div>
+                          <label>Address</label>
+                          
+                          {{form.address1}}
+                          <h4>Drop Address</h4>
+                          <div class="input-row">
+                            <div class="input-group">
+                                <label>City</label>
+                                
+                                {{form.city2}}
+                            </div>
+                            <div class="input-group">
+                               <label>Pincode</label>
+                               
+                               {{form.pincode2}}
+                           </div>
+                       </div>
+                           <div class="input-row">
+                           <div class="input-group">
+                               <label>State</label>
+                               
+                               {{form.state2}}
+                           </div>
+
+                         </div>
+                         <label>Address</label>
+                         
+                         {{form.address2}}
+                          <button type="submit">ADD</button>
+                      </form>
+                </div>
+
+            </div>    
+        </div>        
+    </section>
+       <script>
+
+          function populate(s1,s2)
+          {
+            var s1 = document.getElementById(s1);
+            var s2 = document.getElementById(s2);
+
+            s2.innerHTML = "";
+
+            if(s1.value == "electronics")
+            {
+              var optionArray = ['phones,tablets,etc|phones,tablets,etc','refrigerator,Tv,AC,etc|refrigerator,Tv,AC,etc','laptop,personal computer,Pc accessories,etc|laptop,personal computer,Pc accessories,etc','printer,fan,etc|printer,fan,etc' ];
+            }
+            else if(s1.value == 'furniture')
+            {
+              var optionArray = ['beds|beds','cabinets|cabinets','chairs and seating|chairs and seating','desks,tables,etc|desks,tables,etc' ];
+            }
+            
+            for(var option in optionArray)
+            {
+              var pair = optionArray[option].split("|");
+              var newoption = document.createElement("option");
+
+              newoption.value = pair[0];
+              newoption.innerHTML = pair[1];
+              s2.options.add(newoption);
+            }
+
+          }
+
+        </script>
+    </body>
+</html>

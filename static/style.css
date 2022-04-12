@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(frontimages.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img
+{
+    width: 150px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+    font: icon;
+}
+.nav-links:hover{
+    color: rgb(109, 116, 117);
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 0px 30px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: white;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    background: rgb(255, 255, 255);
+    width: 100%;
+}
+h1{
+    margin: 0 0 10px;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+}
+.box
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    border: 2px;
+    transform: translate(-50%,-50%);
+}
+input{
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    box-sizing: border-box;
+    transition: .5s;
+}
+input[type='text']
+{
+    background: rgb(255, 255, 255);
+    width: 500px;
+    height: 45px;
+    border: black;
+    outline: none;
+    padding: 0 25px;
+    border-radius: 25px 25px 25px 25px;
+}
+input[value="submit"]
+{
+   position: relative;
+   border-radius: 0 25px 25px 0; 
+   width: 120px;
+   height: 45px;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   background: white;
+}
+input[value="submit"]:hover
+{
+    background: rgb(67, 67, 69);
+}
+.section1{
+	min-height: 100vh;
+    
+    height: 100%;
+    background-color: black;
+    
+    position: relative;
+}
+.container{
+    min-height: 10px;
+	width: 80%;
+    height: 50%;
+	display: block;
+	margin:auto;
+	padding-top: 100px;
+}
+.content-section{
+	float: left;
+	width: 55%;
+}
+.image-section{
+	float: right;
+	width: 40%;
+}
+.image-section img{
+	width: 100%;
+	height: auto;
+}
+.content-section .title{
+	text-transform: uppercase;
+	font-size: 400px;
+}
+.content-section .content h3{
+	margin-top: 20px;
+	color:#f8f6f6;
+	font-size: 21px;
+}
+.content-section .content p{
+	margin-top: 10px;
+    color: white;
+	font-family: sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+.content-section .content .button{
+	margin-top: 30px;
+}
+.content-section .content .button a{
+	background-color: #3d3d3d;
+	padding:12px 40px;
+	text-decoration: none;
+	color:#fff;
+	font-size: 25px;
+	letter-spacing: 1.5px;
+}
+.content-section .content .button a:hover{
+	background-color: #ffffff;
+	color:#fff;
+}
+.content-section .social{
+	margin: 40px 40px;
+}
+.content-section .social i{
+	color:#ffffff;
+	font-size: 30px;
+	padding:0px 10px;
+}
+.content-section .social i:hover{
+	color:#3d3d3d;
+}
+@media screen and (max-width: 768px){
+	.container{
+	width: 80%;
+	display: block;
+	margin:auto;
+	padding-top:50px;
+}
+.content-section{
+	float:none;
+	width:100%;
+	display: block;
+	margin:auto;
+}
+.image-section{
+	float:none;
+	width:100%;
+	
+}
+.image-section img{
+	width: 100%;
+	height: auto;
+	display: block;
+	margin:auto;
+}
+.content-section .title{
+	text-align: center;
+	font-size: 19px;
+}
+.content-section .content .button{
+	text-align: center;
+}
+.content-section .content .button a{
+	padding:9px 30px;
+}
+.content-section .social{
+	text-align: center;
+}}

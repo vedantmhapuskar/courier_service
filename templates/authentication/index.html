@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>courier service</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href={% static 'style.css' %} >
+</head>
+<body>
+
+ {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+    </button>    
+        </div>
+        {% endfor %}
+
+    {% if user.is_authenticated %}
+    <section class="header">
+        <nav>
+            <a href="http://127.0.0.1:8000/"><img src={% static 'logo/courier-logos_white.png' %}></a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="/jobapps">Join Us</a></li>
+                <li><a href="/show">Create order</a></li>
+                <li><a href="/price">calculate price</a></li>
+                <li><a href="/contact">contact us</a></li>
+                <li><a href="/signout">SignOut</a></li>
+                {% else %}
+                <section class="header">
+                    <nav>
+                        <a href=""><img src={% static 'logo/courier-logos_white.png' %}></a>
+                    <div class="nav-links">
+                        <ul>
+                            <li><a href="/jobapps">Join Us</a></li>
+                            <li><a href="/price">calculate price</a></li>
+                            <li><a href="/contact">contact us</a></li>
+                <li><a href="signup">sign up</a></li>
+                <li><a href="signin">sign in</a></li>
+                        </ul>
+            </ul>
+        </div>    
+                {% endif %}
+        <div class="box">
+            
+            <form id="your_form" onsubmit="yourFunction()">
+                <input type="text" name="keywords" placeholder="Tracking Id                                         🔍">
+                
+            </form>
+        </div>
+    </nav>
+    </section>
+</section>
+<div class="section1">
+    <div class="container">
+        <div class="content-section">
+            <div class="title">
+                <h1>About Us</h1>
+            </div>
+            <div class="content">
+                <h3></h3>
+                <p>Address:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspE-mail:<br>
+                    Calista Wise&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspvmhapuskar9@gmail.com<br>
+                    7292 Dictum Av.
+                    San Antonio MI 47096<br>
+                    (492) 709-6392<br>
+                </p>
+               
+            </div>
+            <div class="social">
+                <a href="https://www.facebook.com/people/Deliveroo-Deliveroo/100078759216947/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/courier34270633"><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="image-section">
+            <img src={% static 'img one2.jpg'%}>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function yourFunction(){
+        var action_src = "http://127.0.0.1:8000/track/" + document.getElementsByName("keywords")[0].value;
+        var your_form = document.getElementById('your_form');
+        your_form.action = action_src ;
+    }
+</script>    
+</html>

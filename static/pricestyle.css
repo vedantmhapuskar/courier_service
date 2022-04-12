@@ -1,0 +1,71 @@
+body{
+    min-height: 90vh;
+    max-height: 90vh;
+    width: 99%;
+    height: 90%;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(commercial-building.jpg);
+    
+    background-size: cover;
+    position: relative;
+}
+.box
+{
+    position: absolute;
+    top: 40%;
+    color: white;
+    left: 55%;
+    width: 500px;
+    transform: translate(-50%,-50%);
+}
+p{
+    color: white;
+    
+}
+select[type='text']
+{
+    background: rgb(224, 221, 221);
+    overflow:scroll;
+    width: 350px;
+    height: 45px;
+    margin-bottom: 20px;
+    border: black;
+    outline: none;
+    padding: 0 25px;
+    border-radius: 1px;
+}
+input[type='number']
+{
+    background: rgb(224, 221, 221);
+    width: 330px;
+    height: 45px;
+    margin-bottom: 20px;
+    border: black;
+    outline: none;
+    padding: 0 25px;
+    border-radius: 1px;
+}
+.result
+{
+    color: white;
+}
+input[type="submit"]
+{
+   position: relative;
+   border-radius: 25px 25px 25px 25px; 
+   width: 120px;
+   height: 45px;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   background: rgb(218, 213, 213);
+}
+h1{
+    margin: 0 0 10px;
+    padding: 0;
+    margin-bottom: 30px;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+}
+b{
+    color: white;
+}

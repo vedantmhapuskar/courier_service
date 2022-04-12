@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>price calculator</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href={% static 'pricestyle.css' %}>
+</head>
+
+<body>
+    <script>
+        function myfun() {
+            var a = document.getElementById('weight').value;
+            var b = 331;
+            document.getElementById('result').innerHTML = (a * b);
+            return false;
+        }
+    </script>
+    <section class="header">
+        <div class="box">
+            <h1>CALCULATE PRICE</h1>
+           <!-- <p> - view available cities to place a order <br>
+                - Check the order price
+            </p>    -->
+            <form>
+                <select type="text" name="Select1" size="1" id="ddlCars">
+                    <option value="">- Drop City -</option>
+                    <option value"">Mumbai</option>
+                    <option value="">Pune</option>
+                    <option value="">Nagpur</option>
+                    <option value="">Thane</option>
+                    <option value="">Pimpri-Chinchwad</option>
+                    <option value="">Nashik</option>
+                    <option value"">Kalyan-Dombivli</option>
+                    <option value="">Aurangabad</option>
+                    <option value="">Navi Mumbai</option>
+                    <option value="">Solapur</option>
+                    <option value="">Kolhapur</option>
+                    <option value="">Chiplun</option>
+                    <option value="">Khopoli</option>
+                    <option value="">Bhandup</option>
+                </select>
+                <select type="text" name="Select1" size="1" id="ddlCars">
+                    <option value="">- Pickup City -</option>
+                    <option value"">Mumbai</option>
+                    <option value="">Pune</option>
+                    <option value="">Nagpur</option>
+                    <option value="">Thane</option>
+                    <option value="">Pimpri-Chinchwad</option>
+                    <option value="">Nashik</option>
+                    <option value"">Kalyan-Dombivli</option>
+                    <option value="">Aurangabad</option>
+                    <option value="">Navi Mumbai</option>
+                    <option value="">Solapur</option>
+                    <option value="">Kolhapur</option>
+                    <option value="">Chiplun</option>
+                    <option value="">Khopoli</option>
+                    <option value="">Bhandup</option>
+                </select>
+                <input type="number" id="weight" name="" placeholder="Weight in Kg">
+                <input type="submit" name="" value="submit" onclick="return myfun();">
+                <b>The price is :</b>
+                <span class="result" id="result"></span>
+            </form>
+        </div>
+    </section>
+</body>
+<script>
+    function activatePlacesSearch() {
+        var input = document.getElementById('search-city');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+    }
+</script>
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5QCwkCLUwnemuG6iT5zhDz7Y1GyuKECw&libraries=places&callback=activatePlacesSearch">
+    </script>
+
+</html>

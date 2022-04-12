@@ -1,0 +1,78 @@
+{% load mathfilters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'stylecopy.css' %}">
+</head>
+<body>
+
+
+<h1>
+   All Packages
+</h1>
+
+<main>
+    <table>
+        <thead>
+       <td>
+          <a class='button' href="load_form">Add Package</a>
+        </td>
+        </thead>
+        <thead>
+        <tr>
+            <th>Package Type</th>
+            <th>Pickup City</th>
+            <th>Drop City</th>
+            <th>Price</th>
+            <th>Summary</th>
+            <th>Payment</th>
+            <th>Track Package</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+
+
+        
+        <tbody>
+        {% for i in packs %}
+        <tr>
+            <td>
+                {{i.slct2}}
+            </td>
+            <td>
+                {{i.city1}}
+            </td>
+            <td>
+                {{i.city2}}
+            </td>
+            <td>
+                {{i.weight|mul:330}}
+            </td>
+
+            <td>
+                <a class='button' href="summary/{{i.id}}">summary</a>
+            </td>
+            <td>
+                <a class='button' href="payment/{{i.id}}" >Pay</a>
+            </td>
+            <td>
+                <a class='button' href="track/{{i.track_id}}">Track</a>
+            </td>
+            <td>
+                <a class='button' href="delete/{{i.id}}">Delete</a>
+            </td>
+
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+</main>
+
+
+</body>
+</html>

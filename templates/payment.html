@@ -1,0 +1,33 @@
+{% load mathfilters %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Order Payment</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href={% static 'payment.css' %}>
+</head>
+
+<body>
+    {% csrf_token %}
+    <div class="loginbox">
+        <img src={% static 'package.png' %} class="avatar">
+        <h1>Order Payment</h1>
+        <form  method="post" action="{% url 'checkout_session' packs.id %}">
+            {% csrf_token %}
+            <p>Package weight - {{packs.weight}}</p>
+            <p>Package Type - {{packs.slct2}}</p>
+            <p>Total Amount - {{packs.weight|mul:330}}</p>
+            
+            <input id="stripe-button" value="pay" type="submit" name="">
+  
+        </div>
+
+</form>
+</body>
+
+</html>

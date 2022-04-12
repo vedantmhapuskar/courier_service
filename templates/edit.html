@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Add address</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href={% static 'editdetails.css'%}>
+    </head>
+    <body>
+        <section class="header">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-left">
+                     
+                    <form method="post" action="/update/{{packs.id}}">
+                        {%csrf_token %}
+                        <table>
+                            <tr>
+                                <label for="fname"><i class=""></i> Weight of package</label>
+                                <td> <input type="number"  name="weight" required value="{{packs.weight}}"></td>
+                            </tr>
+                             <tr>
+                                <td> <input type="text" name="slct1" required value="{{packs.slct1}}"></td>
+                            </tr>
+                             <tr>
+                                <td> <input type="text" name="slct2" required value="{{packs.slct2}}"></td>
+                            </tr>
+                             <tr>
+                                <td> <input type="text" name="city1" required value="{{packs.city1}}"></td>
+                            </tr>
+                            <tr>
+                                <td> <input type="number" name="pincode1" required value="{{packs.pincode1}}"></td>
+                            </tr>
+                             <tr>
+                                <td> <input type="text" name="state1" required value="{{packs.state1}}"></td>
+                            </tr>
+                             <tr>
+                                <td> <input type="text" name="address1" required value="{{packs.address1}}"></td>
+                            </tr>
+                             <tr>
+                                <td> <input type="text" name="city2" required value="{{packs.city2}}"></td>
+                            </tr>
+                            <tr>
+                                <td> <input type="number" name="pincode2" required value="{{packs.pincode2}}"></td>
+                            </tr>
+                             <tr>
+                                <td> <input type="text" name="state2" required value="{{packs.state2}}"></td>
+                            </tr>
+                             <tr>
+                                <td> <input type="text" name="address2" required value="{{packs.address2}}"></td>
+                            </tr>
+                    
+                        </table>
+                        <button type="submit">
+                            Update
+                        </button>
+                      </form>
+                </div>
+
+            </div>    
+        </div>        
+    </section>
+       <script>
+
+          function populate(s1,s2)
+          {
+            var s1 = document.getElementById(s1);
+            var s2 = document.getElementById(s2);
+
+            s2.innerHTML = "";
+
+            if(s1.value == "electronics")
+            {
+              var optionArray = ['phones,tablets,etc|phones,tablets,etc','refrigerator,Tv,AC,etc|refrigerator,Tv,AC,etc','laptop,personal computer,Pc accessories,etc|laptop,personal computer,Pc accessories,etc','printer,fan,etc|printer,fan,etc' ];
+            }
+            else if(s1.value == 'furniture')
+            {
+              var optionArray = ['beds|beds','cabinets|cabinets','chairs and seating|chairs and seating','desks,tables,etc|desks,tables,etc' ];
+            }
+            
+            for(var option in optionArray)
+            {
+              var pair = optionArray[option].split("|");
+              var newoption = document.createElement("option");
+
+              newoption.value = pair[0];
+              newoption.innerHTML = pair[1];
+              s2.options.add(newoption);
+            }
+
+          }
+
+        </script>
+    </body>
+</html>

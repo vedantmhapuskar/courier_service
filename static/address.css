@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    max-height: 100vh;
+    min-height: 200vh;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(110deg, #c8c7c5 30%, #999994 60%);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+body{
+    background:  rgb(195, 195, 195);
+    font-size: 25px;
+    color: rgb(251, 251, 251);
+}
+.container{
+    width: 80%;
+    margin: 50px auto;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px 0px, rgba(0, 0, 0, 0.32) 0px 2px 16px 0px;
+}
+.contact-box{
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+}
+.contact-left{
+    flex-basis: 60%;
+    padding: 40px 60px;
+}
+
+.input-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.input-row .input-group{
+    flex-basis: 45%;
+}
+input{
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgb(255, 252, 252);
+    outline: none;
+    padding-bottom: 5px;
+}
+
+label{
+    margin-bottom: 6px;
+    display: block;
+}
+button{
+    background: #0a0a0a;
+    width: 300px;
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 45px;
+    border-radius: 30px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.contact-left h3{
+    color: rgb(250, 250, 250);
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+.contact-right h3{
+    color: rgb(255, 254, 254);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+tr td:first-child{
+     padding-right: 20px;
+}
+tr td{
+    padding-top: 20px;
+}
+input[type=number] {
+    width: 40%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 3px;
+    color: #fff;
+  }
+  select[type=text] {
+    width: 40%;
+    margin-bottom: 20px;
+    background-color: transparent;
+    padding: 12px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 3px;
+    color: white;
+  }
+  .options{
+      color: black;
+  }
+  .contact-left h3{
+    position: relative;
+    color: rgb(251, 251, 251);
+    font-weight: 400;
+    margin-bottom: 30px;
+    left: 420px;
+    right: 0px;
+}
+.contact-left h4{
+    position: relative;
+    color: rgb(251, 251, 251);
+    font-weight: 400;
+    margin-bottom: 30px;
+    left: 220px;
+    right: 0px;
+    padding: 20px;
+}

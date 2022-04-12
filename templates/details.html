@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href={% static 'details.css' %}>
+    </head>
+    <h1>Package Details</h1>
+    <section>
+    <body>
+        <div class="row">
+            <div class="col-75">
+              <div class="container">
+                <form method="post" action="/add_details"> 
+                    {% csrf_token %}        
+                  <div class="row">
+                    <div class="col-50">
+                      <label for="fname"><i class=""></i> Weight of package</label>
+                      <input type="number" id="weight" name="weight" placeholder="in KG">
+                      <div class="f-group">
+                      <label for="email"> Category</label>
+                      <select type="text" id="slct1" name="slct1"  onchange="populate(this.id,'slct2')">
+                        <option value="">-- choose Category --</option>
+                        <option value="electronics">electronics</option>
+                        <option value="furniture">furniture</option>
+                      </select>
+                      </div>
+                      <div class="f-group">
+                        <label for=""> type</label>
+                        <select type="text" id="slct2" name="slct2">
+                        
+                        </select>
+                        </div>
+                    </div>         
+                  </div>
+                  <input type="submit" value="Submit" class="btn">
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <script>
+
+          function populate(s1,s2)
+          {
+            var s1 = document.getElementById(s1);
+            var s2 = document.getElementById(s2);
+
+            s2.innerHTML = "";
+
+            if(s1.value == "electronics")
+            {
+              var optionArray = ['phones,tablets,etc|phones,tablets,etc','refrigerator,Tv,AC,etc|refrigerator,Tv,AC,etc','laptop,personal computer,Pc accessories,etc|laptop,personal computer,Pc accessories,etc','printer,fan,etc|printer,fan,etc' ];
+            }
+            else if(s1.value == 'furniture')
+            {
+              var optionArray = ['beds|beds','cabinets|cabinets','chairs and seating|chairs and seating','desks,tables,etc|desks,tables,etc' ];
+            }
+            
+            for(var option in optionArray)
+            {
+              var pair = optionArray[option].split("|");
+              var newoption = document.createElement("option");
+
+              newoption.value = pair[0];
+              newoption.innerHTML = pair[1];
+              s2.options.add(newoption);
+            }
+
+          }
+
+        </script>
+    </body>
+</html>

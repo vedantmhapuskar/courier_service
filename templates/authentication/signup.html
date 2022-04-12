@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>courier service</title>
+    <link rel="stylesheet" type="text/css" href={% static 'signupstyle.css' %}>
+</head>
+
+<body>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    <div class="loginbox">
+        <img src={% static 'avatar.png' %} class="avatar">
+        <h1>signup</h1>
+        <form action="/signup/" method="post">
+            {% csrf_token %}
+            <input type="text" id="username" name="username" placeholder="create a username" Required>
+
+
+            <input type="text" id="fname" name="fname" placeholder="enter first name" Required>
+
+
+            <input type="text" id="lname" name="lname" placeholder="enter lastname" Required>
+
+            <input type="text" id="email" name="email" placeholder="enter email" Required>
+
+            <input type="password" id="pass1" name="pass1" minlength="7" placeholder="enter password" Required>
+
+            <input type="password" id="pass2" name="pass2" placeholder="confirm password" Required>
+            <input type="submit" name="" value="signup">
+
+    </div>
+
+</body>
+</head>
+
+</html>
